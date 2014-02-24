@@ -23,18 +23,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //renders the index page
 app.get('/', function(req, res){
-	res.render('index')
+	res.render('index');
 });
 
 // displays a list of applicants
 app.get('/applicants', function(req, res){
-	res.render('applicants')
+	res.render('applicants');
 });
 
 // creates and applicant
 app.post('/applicant', function(req, res){
-	// Here is where you need to get the data
-	// from the post body and store it
+	console.log(req.body);
+	res.render('submitted');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
