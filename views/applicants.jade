@@ -4,4 +4,10 @@ block content
 	.container
 		h1 Applicants
 		ul#applications.list-unstyled
-		p Applicants should go here.
+		for a in applicants
+			h2 Name: #{a.name}
+			li Bio: #{a.bio}
+			li Key Skills: #{a.skills}
+			li Years of Experience: #{a.years}
+			li Why I want to work at Lexcorp: #{a.why}
+		a(href="/") Return to Application Submission Page

@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
+var controller = require('./controllers/controller.js');
 var ApplicantModel = require('./models/usermodel');
 var app = express();
 
@@ -29,13 +30,10 @@ app.get('/', function(req, res){
 });
 
 // displays a list of applicants
-app.get('/applicants', function(req, res){
-	res.render('applicants');
-});
+app.get('/applicants', controller.list);
 
 // creates and applicant
 app.post('/applicant', function(req, res){
-	console.log(req.body);
 	var newApp = new ApplicantModel ({
 		name: req.body.name,
 		bio: req.body.bio,
