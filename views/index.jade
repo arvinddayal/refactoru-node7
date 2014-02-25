@@ -2,8 +2,9 @@ extends layout
 
 block content
 	.container
-		h1 Omega 3 Studios
-		h2 Application for Senior Web Developer
+		img(src="images/lexcorp.png")
+		h1 LexCorp
+		h2 Application for Evil Project Manager
 
 		form#application-form(action="/applicant", method="post")
 			.form-group
@@ -11,9 +12,9 @@ block content
 			.form-group
 				textarea.form-control(name="bio",rows="5", placeholder="Bio")
 			.form-group
-				textarea.form-control(name="skills",rows="3", placeholder="Skills (separated by commas)")
+				textarea.form-control(name="skills",rows="3", placeholder="Evil Skills (separated by commas)")
 			.form-group
-				input.form-control(name="years", type="number", placeholder="Years of experience")
+				input.form-control(name="years", type="number", placeholder="Years of evil experience")
 			.form-group
 				textarea.form-control(name="why", rows="5",placeholder="Why do you want to work here?")
 			.form-group

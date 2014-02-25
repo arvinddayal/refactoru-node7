@@ -6,7 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-
+var mongoose = require('mongoose');
+var ApplicantModel = require('./models/usermodel');
 var app = express();
 
 // all environments
@@ -19,6 +20,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+mongoose.connect('mongodb://localhost/lexcorp');
 
 
 //renders the index page
@@ -34,6 +36,14 @@ app.get('/applicants', function(req, res){
 // creates and applicant
 app.post('/applicant', function(req, res){
 	console.log(req.body);
+	var newApp = new ApplicantModel ({
+		name: req.body.name,
+		bio: req.body.bio,
+		skills: req.body.skills,
+		years: req.body.years,
+		why: req.body.why
+	});
+	newApp.save();
 	res.render('submitted');
 });
 
