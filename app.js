@@ -32,7 +32,7 @@ app.get('/', function(req, res){
 // displays a list of applicants
 app.get('/applicants', controller.list);
 
-// creates and applicant
+// creates an applicant
 app.post('/applicant', function(req, res){
 	var newApp = new ApplicantModel ({
 		name: req.body.name,
@@ -44,6 +44,9 @@ app.post('/applicant', function(req, res){
 	newApp.save();
 	res.render('submitted');
 });
+
+// deletes an applicant
+app.get('/applicants/:id', controller.remove);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
