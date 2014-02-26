@@ -2,6 +2,13 @@ var UserModel = require('../models/usermodel');
 
 var UserController = module.exports = {
 
+
+	add: function(req, res){
+		var x = req.body;
+		var newApp = new UserModel(x);
+		newApp.save();
+		res.render('submitted');
+	},
 	list: function(req,res){
 		UserModel.find({}, function (err, doc) {
 			res.render('applicants', {applicants:doc});

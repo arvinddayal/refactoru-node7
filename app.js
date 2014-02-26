@@ -33,17 +33,7 @@ app.get('/', function(req, res){
 app.get('/applicants', controller.list);
 
 // creates an applicant
-app.post('/applicant', function(req, res){
-	var newApp = new ApplicantModel ({
-		name: req.body.name,
-		bio: req.body.bio,
-		skills: req.body.skills,
-		years: req.body.years,
-		why: req.body.why
-	});
-	newApp.save();
-	res.render('submitted');
-});
+app.post('/newapplicant', controller.add);
 
 // deletes an applicant
 app.get('/applicants/:id', controller.remove);
