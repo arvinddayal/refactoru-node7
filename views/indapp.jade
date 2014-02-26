@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.container
+		h1 Applicants Info
+		ul#applications.list-unstyled
+			li 
+				h2 <span>Name</span>: #{applicant.name}
+			li <span>Bio</span>: #{applicant.bio}
+			li <span>Key Skills</span>: #{applicant.skills}
+			li <span>Years of Experience</span>: #{applicant.years}
+			li <span>Why I want to work at Lexcorp</span>: #{applicant.why}
+		a(href="/") Return to Application Submission Page

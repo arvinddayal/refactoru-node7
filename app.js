@@ -35,6 +35,9 @@ app.get('/applicants', controller.list);
 // creates an applicant
 app.post('/newapplicant', controller.add);
 
+//show individual applicant
+app.get('/:id', controller.indiv);
+
 // deletes an applicant
 app.get('/applicants/:id', controller.remove);
 

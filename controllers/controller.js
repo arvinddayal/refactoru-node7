@@ -14,10 +14,16 @@ var UserController = module.exports = {
 			res.render('applicants', {applicants:doc});
 		});
 	},
+	indiv: function(req,res){
+		var x = req.params.id;
+		UserModel.findOne({_id: x}, function(err, doc){
+			res.render('indapp', {applicant:doc});
+		});
+	},
 	remove: function(req,res){
 		var x = req.params.id;
 		UserModel.remove({_id: x}, function(err, doc){
-			res.redirect('/applicants');
+			res.render('/:id');
 		});
 	}
 };

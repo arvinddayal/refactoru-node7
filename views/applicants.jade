@@ -6,11 +6,12 @@ block content
 		for a in applicants
 			ul#applications.list-unstyled
 				li 
-					h2 Name: #{a.name}
-				li Bio: #{a.bio}
-				li Key Skills: #{a.skills}
-				li Years of Experience: #{a.years}
-				li Why I want to work at Lexcorp: #{a.why}
+					h2 <span>Name</span>: 
+						a(href="/#{a.id}") #{a.name}
+				li <span>Bio</span>: #{a.bio}
+				li <span>Key Skills</span>: #{a.skills}
+				li <span>Years of Experience</span>: #{a.years}
+				li <span>Why I want to work at Lexcorp</span>: #{a.why}
 				li 
 					a(href="/applicants/#{a._id}")#delete Delete Applicant
 		a(href="/") Return to Application Submission Page

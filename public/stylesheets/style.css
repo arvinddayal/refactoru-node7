@@ -14,3 +14,8 @@ img {
 h2 {
 	font-weight: bold;
 }
+
+span {
+	text-decoration: underline;
+}
+
